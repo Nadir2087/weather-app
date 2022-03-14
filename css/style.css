@@ -1,0 +1,205 @@
+body{
+    background: rgb(11, 1, 17);
+    height: 100%;
+}
+
+h2{
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+*{
+    /* color: #fff; */
+    /* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
+    text-transform: uppercase;
+    
+}
+
+.conteiner{
+    height: 100%;
+}
+
+.content{
+    overflow: hidden;
+    height: 100%;
+}
+
+.weather{
+    background:linear-gradient(rgb(0, 180, 171),rgb(27, 137, 145));
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin: 0 30px 0 0 ;
+}
+
+.description{
+    font-size: 12px;
+}
+
+.city{
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+}
+.city::before{
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 1px;
+    background: #fff;
+    top: 30px;
+    left: 6%;
+}
+
+.temp{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cost::after{
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 1px;
+    background: #fff;
+    left: 12%;
+    top: 5px;
+
+}
+
+.cost{
+    font-size: 12px;
+    position: relative;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cost h2{
+    font-size: 12px;
+}
+
+
+
+.blog{
+    margin: 0 5px 0 0 ;
+}
+
+
+/* ______________________________________________________________________ */
+
+
+.weather__conteiner{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+    flex-wrap: wrap;
+}
+
+.elem_plus{
+    padding: 20px 40px;
+    font-size: 60px;
+    background: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    color:#000;
+}
+
+.elem_plus:hover{
+    background: #C6C6C6;
+}
+/* _______________________________________________________________________ */
+.popap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .8s ease 0s;
+    /* transform: scale(); */
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.popap:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popap:target .popap_content{
+    opacity: 1;
+    transform: translate(0px,0px);
+}
+
+.popap__area{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;top: 0;
+}
+
+.popap_body{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    /* transform: scale(1.5); */
+}
+.popap_content{
+    background: #fff;
+    color: #000;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(-50deg);
+    transition: all .8s ease 0s;
+}
+.popap__close{
+    position: absolute;
+    font-size: 20px;
+    top: 10px;right: 10px;
+    color: #000;
+    text-decoration: none;
+}
+.popap_tittle{
+    font-size: 40px;
+    margin:0 0 1em 0;
+}
+
+
+.Popap_btn{
+    /* display: block; */
+    /* width: 80px; */
+    padding: 20px 30px;
+    background: red;
+    text-decoration: none;
+    color: #fff;
+}
+
+.Popap_btn:hover{
+    background: rgb(189, 0, 0);
+}
+
+.popap_input{
+    display: flex;
+    /* height: 100vh; */
+
+    align-items: center;
+    justify-content: center;
+}
+
+.popap_input input{
+    margin-right: 10px;
+    padding: 5px;
+    width: 250px;
+    height: 53px;
+    font-size: 20px;
+}
